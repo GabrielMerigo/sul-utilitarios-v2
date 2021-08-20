@@ -10,7 +10,7 @@ export const Img = styled.img`
 `;
 
 export const HighlightedVehicles = styled.div`
-  .line-titulo{
+  .line-title{
     max-width: 900px;
     margin: 0.4rem auto;
     position: relative;

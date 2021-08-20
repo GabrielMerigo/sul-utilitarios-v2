@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createServer, Model } from 'miragejs';
 
-const transaction = 'vehicles';
+const vehicles = 'vehicles';
 const url = '/vehicles';
 
 createServer({
   models: {
-    transactions: Model
+    vehicles: Model
   },
 
   seeds(server){
     server.db.loadData({
-      transactions: [
+      vehicles: [
         {
           img: './assets/carro-do-pai.png',
           title: 'FORD ECOSPORT 2005 XLS',
@@ -31,14 +31,14 @@ createServer({
   routes(){
     this.namespace = 'api';
 
-    this.get(url, () => {
-      return this.schema.all(transaction);
+    this.get('/vehicles', () => {
+      return this.schema.all(vehicles);
     })
 
     this.post(url, (schema, request) => {
       const data = JSON.parse(request.requestBody);
 
-      return schema.create(transaction, data)
+      return schema.create(vehicles, data)
     })
   }
 })
