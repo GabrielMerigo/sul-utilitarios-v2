@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createServer, Model } from 'miragejs';
 
-const transaction = 'transaction';
-const url = '/transactions';
+const transaction = 'vehicles';
+const url = '/vehicles';
 
 createServer({
   models: {
@@ -18,10 +18,30 @@ createServer({
           img: './assets/carro-do-pai.png',
           title: 'FORD ECOSPORT 2005 XLS',
           subtitle: '1.6 Ano 2004/2005 com gnv completa, financia, recebemos troca.'
+        }, 
+        {
+          img: './assets/carro-do-pai.png',
+          title: 'VW GOLF 1.6 GNV',
+          subtitle: 'VW GOLF 1.6 GNV Completo.'
         }
       ]
     })
+  },
+
+  routes(){
+    this.namespace = 'api';
+
+    this.get(url, () => {
+      return this.schema.all(transaction);
+    })
+
+    this.post(url, (schema, request) => {
+      const data = JSON.parse(request.requestBody);
+
+      return schema.create(transaction, data)
+    })
   }
+
 })
 
 ReactDOM.render(
