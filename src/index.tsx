@@ -41,7 +41,6 @@ createServer({
       return schema.create(transaction, data)
     })
   }
-
 })
 
 ReactDOM.render(

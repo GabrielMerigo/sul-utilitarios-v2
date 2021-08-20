@@ -12,8 +12,8 @@ export function Home() {
           <div className="ln1"></div>
           <h2>Veículos a Venda</h2>
         </div>
-
         
+
       </HighlightedVehicles>
     </>
   )
