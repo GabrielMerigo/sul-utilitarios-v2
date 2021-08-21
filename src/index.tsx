@@ -15,12 +15,17 @@ createServer({
     server.db.loadData({
       vehicles: [
         {
-          img: './assets/carro-do-pai.png',
+          img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/1.png',
           title: 'FORD ECOSPORT 2005 XLS',
           subtitle: '1.6 Ano 2004/2005 com gnv completa, financia, recebemos troca.'
-        }, 
+        },
         {
-          img: './assets/carro-do-pai.png',
+          img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/4.png',
+          title: 'VW GOLF 1.6 GNV',
+          subtitle: 'VW GOLF 1.6 GNV Completo.'
+        },
+        {
+          img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/6.png',
           title: 'VW GOLF 1.6 GNV',
           subtitle: 'VW GOLF 1.6 GNV Completo.'
         }
