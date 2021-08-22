@@ -106,6 +106,7 @@ export const Description = styled.div`
         color: white;
         font-size: 2rem;
         font-style: italic;
+        font-weight: normal;
       }
     }
 
@@ -113,9 +114,9 @@ export const Description = styled.div`
       text-align: center;
       background-color: #EB2D2D;
       border: 0;
-      border-bottom: 5px solid #B21E1E;
+      border-bottom: 0.3rem solid #B21E1E;
       color: white;
-      font-size: 16px;
+      font-size: 1rem;
       font-style: italic;
       width: 9rem;
       margin-left: -7rem;
@@ -131,7 +132,26 @@ export const Description = styled.div`
 
   div:nth-child(2){
     width: 50%;
-    padding: 2.6rem 0;
+    padding: 5rem 3rem;
     background: var(--gray-light);
+    text-align: left;
+
+    h2{
+      color: white;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    p{
+      color: white;
+      font-size: 1rem;
+    }
+
+    div{
+      display: flex;
+      justify-content:space-between;
+    }
   }
 `;
