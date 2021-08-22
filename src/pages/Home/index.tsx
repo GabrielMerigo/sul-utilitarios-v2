@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header";
 import Banner from '../../assets/banner-black.png';
-// import Truck from '../../assets/banner-black.png';
-import { Img, HighlightedVehicles } from './styles'
+import { IoIosCar } from 'react-icons/io';
+import { RiInformationLine } from 'react-icons/ri';
+import { Img, HighlightedVehicles, CarList } from './styles'
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
@@ -38,26 +39,23 @@ export function Home() {
           <h2>Veículos a Venda</h2>
         </div>
 
-        <div className="container">
-          <div className="vitrine-destaque">
-            {!loading && (
-              <ul> {
-                vehicles.map(vehicle => {
-                  return (
-                    <li key={vehicle.id}>
-                      <div className="info-car">
-                        <img src={vehicle.img} alt={vehicle.title} />
-                        <h2>{vehicle.title}</h2>
-                        <p>{vehicle.subtitle}</p>
-                      </div>
-                    </li>
-                  )
-                })}
-              </ul>
-            )}
-          </div>
-        </div>
-
+        <CarList>
+          {!loading && (
+            <ul> {
+              vehicles.map(vehicle => {
+                return (
+                  <li key={vehicle.id}>
+                      <img src={vehicle.img} alt={vehicle.title} />
+                    <div>
+                      <span><h4><IoIosCar/>{vehicle.title}</h4></span>
+                      <span><p><RiInformationLine/>{vehicle.subtitle}</p></span>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </CarList>
       </HighlightedVehicles>
     </>
   )
