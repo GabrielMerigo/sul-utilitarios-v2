@@ -34,7 +34,6 @@ export const HighlightedVehicles = styled.div`
       text-transform: uppercase;
       font-style: italic;
     }
-
   }
 `;
 
@@ -83,6 +82,56 @@ export const CarList = styled.div`
     img{
       width:90%;
     }
-  } 
+  }
+`;
 
+export const Description = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+
+  div:nth-child(1){
+    width: 50%;
+    background: var(--gray-dark);
+    padding: 2.6rem 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+    div{
+      display: flex;
+      flex-direction: column;
+
+      h2{
+        color: white;
+        font-size: 2rem;
+        font-style: italic;
+      }
+    }
+
+    button{
+      text-align: center;
+      background-color: #EB2D2D;
+      border: 0;
+      border-bottom: 5px solid #B21E1E;
+      color: white;
+      font-size: 16px;
+      font-style: italic;
+      width: 9rem;
+      margin-left: -7rem;
+      height: 3rem;
+      margin-top: 9.8rem;
+      transition: all 300ms;
+
+      &:hover{
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  div:nth-child(2){
+    width: 50%;
+    padding: 2.6rem 0;
+    background: var(--gray-light);
+  }
 `;
