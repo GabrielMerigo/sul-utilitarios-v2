@@ -144,6 +144,11 @@ export const Description = styled.div`
       margin-bottom: 0.5rem;
     }
 
+    h3{
+      font-size: 1.7rem;
+      color: var(--gray-dark);
+    }
+
     p{
       color: white;
       font-size: 1rem;
@@ -152,6 +157,19 @@ export const Description = styled.div`
     div{
       display: flex;
       justify-content:space-between;
+      margin-top:1rem;
+      
+      img{
+        & + img{
+          margin-left: 1rem;
+        }
+        transition: all 200ms;
+      }
+
+      img:hover{
+        filter: brightness(0.8);
+        cursor: pointer;
+      }
     }
   }
 `;
