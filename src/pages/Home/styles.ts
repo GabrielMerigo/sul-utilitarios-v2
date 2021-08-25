@@ -173,3 +173,9 @@ export const Description = styled.div`
     }
   }
 `;
+
+export const Local = styled.div`
+  h2{
+    
+  }
+`;
