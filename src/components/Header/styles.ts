@@ -17,10 +17,12 @@ export const HeaderContainer = styled.header`
     margin-right:8rem;
     margin-top: 0.4rem;
 
-    li{
+    a{
       padding: 2rem 1.6rem;
       font-size: 1.6rem;
       font-style: italic;
+      text-decoration: none;
+      color: var(--gray-black);
       
       span:hover{
         transition: color 0.3s;

@@ -43,6 +43,16 @@ createServer({
           img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/6.png',
           title: 'VW GOLF 1.6 GNV',
           subtitle: 'Porshe KN a diesel e 100 mil KM rodado. Bem baratinho.'
+        },
+        {
+          img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/6.png',
+          title: 'VW GOLF 1.6 GNV',
+          subtitle: 'Porshe KN a diesel e 100 mil KM rodado. Bem baratinho.'
+        },
+        {
+          img: 'https://storage.googleapis.com/golden-wind/ignite/react-native/images/6.png',
+          title: 'VW GOLF 1.6 GNV',
+          subtitle: 'Porshe KN a diesel e 100 mil KM rodado. Bem baratinho.'
         }
       ]
     })

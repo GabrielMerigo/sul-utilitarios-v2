@@ -5,7 +5,7 @@ export const Img = styled.img`
 	width: 100%;
 	height: 29rem;
 	background-repeat: no-repeat;
-	border-bottom: solid 0.35rem #9e9ea5;
+	border-bottom: solid 0.35rem var(--gray-light);
   margin-top: 2rem;
 `;
 
@@ -42,14 +42,14 @@ export const CarList = styled.div`
   margin:0 auto;
 
   ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     margin: 0 auto;
 
     li {
-      height:90%;
-      width:94%;
+      margin:0.5rem;
+      width:31.5%;
       background: var(--gray-light);
       border-radius: 0.5rem;
       margin-top: 2rem;
@@ -57,7 +57,7 @@ export const CarList = styled.div`
 
       div {
         background: var(--gray-dark);
-        height: 39%;
+        height: 40%;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius:10px;
         padding-left: 0.7rem;
@@ -204,8 +204,8 @@ export const Local = styled.div`
 
 
 export const Map = styled.section`
-	border-top: 2px solid #333333;
-	background: #5c5c5c;
+	border-top: 2px solid var(--gray-dark);
+	background: var(--gray-light);
 	height: 30rem;
 	width: 100%;
   display: flex;
@@ -217,5 +217,29 @@ export const Map = styled.section`
     margin: 1.5rem auto;
     height: 432px;
     width: 47.5rem;
+  }
+`;
+
+export const Footer = styled.section`
+  width: 100%;
+  height: 9rem;
+  padding: 2.3px 2rem;
+  background: var(--gray-dark);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  p{
+    color: white;
+    font-size: 1.2rem;
+    line-height:2rem;
+  } 
+  
+  p:nth-child(1){
+    margin-top: 2rem;
+  }
+
+  span{
+    color: #4298f5;
   }
 `;

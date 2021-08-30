@@ -1,5 +1,6 @@
 import { HeaderContainer } from './styles';
 import Logo from '../../assets/logo-loja.png';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   return (
@@ -7,10 +8,10 @@ export function Header() {
       <img src={Logo} alt="Logo Sul Utilitarios" />
       <nav>
         <ul>
-          <li><span>Principal</span></li>
-          <li><span>Venda</span></li>
-          <li><span>Sobre</span></li>
-          <li><span>Contato</span></li>
+          <Link to="/"><span>Principal</span></Link>
+          <Link to="/sale"><span>Venda</span></Link>
+          <Link to="/about"><span>Sobre</span></Link>
+          <Link to="/contact"><span>Contato</span></Link>
         </ul>
       </nav>
     </HeaderContainer>
