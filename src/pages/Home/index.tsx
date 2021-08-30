@@ -2,6 +2,7 @@ import { Header } from "../../components/Header";
 import Banner from '../../assets/banner-black.png';
 import { IoIosCar } from 'react-icons/io';
 import { RiInformationLine } from 'react-icons/ri';
+import { Footer } from "../../components/Footer";
 import {
   Img,
   HighlightedVehicles,
@@ -9,7 +10,6 @@ import {
   Description,
   Local,
   Map,
-  Footer
 } from './styles';
 
 import ArrowRight from '../../assets/arrow-right.png';
@@ -107,10 +107,7 @@ export function Home() {
           </div>
         </Map>
       </Local>
-      <Footer>
-        <p>Todos os direitos reservados, Sul Utilitários - Porto Alegre (RS)</p>
-        <p>Desenvolvido por <span>Gabriel Merigo</span></p>
-      </Footer>
+      <Footer />
     </>
   )
 }

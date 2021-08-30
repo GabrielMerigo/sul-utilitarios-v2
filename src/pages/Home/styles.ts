@@ -220,26 +220,3 @@ export const Map = styled.section`
   }
 `;
 
-export const Footer = styled.section`
-  width: 100%;
-  height: 9rem;
-  padding: 2.3px 2rem;
-  background: var(--gray-dark);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
-  p{
-    color: white;
-    font-size: 1.2rem;
-    line-height:2rem;
-  } 
-  
-  p:nth-child(1){
-    margin-top: 2rem;
-  }
-
-  span{
-    color: #4298f5;
-  }
-`;
