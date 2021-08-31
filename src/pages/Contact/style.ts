@@ -40,10 +40,11 @@ export const ContainerButton = styled.div`
   width: 100%;
   display: flex;
   justify-content:center;
-  margin-top:6rem;
+  margin-top:4.5rem;
 
   button{
     padding: 2rem;
+    width: 25%;
     font-size: 1.3rem;
     display: flex;
     text-align: center;
@@ -64,5 +65,11 @@ export const ContainerButton = styled.div`
     &:hover{
       filter: brightness(0.7);
     }
+  }
+
+  button:nth-child(2){
+    margin-left: 1rem;
+    background-color: var(--gray-dark)
+
   }
 `;

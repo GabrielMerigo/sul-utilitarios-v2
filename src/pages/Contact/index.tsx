@@ -1,7 +1,8 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { LineTitle, LineHeader, ContainerButton } from './style'
-import { RiWhatsappLine } from 'react-icons/ri'
+import { RiWhatsappLine } from 'react-icons/ri';
+import { HiOutlineMail } from 'react-icons/hi';
 
 export function Contact() {
   return (
@@ -18,8 +19,8 @@ export function Contact() {
           <RiWhatsappLine/>
         </button>
         <button>
-          Contatar pelo Whatsapp
-          <RiWhatsappLine/>
+          Contatar por E-mail
+          <HiOutlineMail/>
         </button>
       </ContainerButton>
       <Footer position="absolute" direction="0" ></Footer>
