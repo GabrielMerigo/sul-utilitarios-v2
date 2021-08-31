@@ -34,3 +34,35 @@ export const LineHeader = styled.div`
   border: 1px solid red;
   width: 100%;
 `;
+
+export const ContainerButton = styled.div`
+	margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  margin-top:6rem;
+
+  button{
+    padding: 2rem;
+    font-size: 1.3rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    line-height:2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray-dark);
+    background-color: var(--gray-light);
+    color: white;
+    transition: all 400ms;
+
+    svg {
+      width: 35px;
+      height: 35px;
+      margin-left: 0.5rem;
+    }
+
+    &:hover{
+      filter: brightness(0.7);
+    }
+  }
+`;

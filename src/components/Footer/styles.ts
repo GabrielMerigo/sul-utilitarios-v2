@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.section`
+interface FooterContainerProps {
+  position: string;
+  direction: string;
+}
+
+export const FooterContainer = styled.section<FooterContainerProps>`
   width: 100%;
   height: 9rem;
   padding: 2.3px 2rem;
@@ -8,7 +13,8 @@ export const FooterContainer = styled.section`
   display: flex;
   flex-direction: column;
   text-align: center;
-  position: absolute;
+  position: ${props => props.position};
+  bottom: ${props => props.direction};
 
   p{
     color: white;

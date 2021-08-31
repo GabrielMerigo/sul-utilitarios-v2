@@ -107,7 +107,7 @@ export function Home() {
           </div>
         </Map>
       </Local>
-      <Footer />
+      <Footer position="static" direction="0" />
     </>
   )
 }
