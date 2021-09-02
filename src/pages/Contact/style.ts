@@ -27,14 +27,6 @@ export const LineTitle = styled.div`
   }
 `;
 
-export const LineHeader = styled.div`
-	margin: 5px auto;
-	position: relative;
-	text-align: center;
-  border: 1px solid red;
-  width: 100%;
-`;
-
 export const ContainerButton = styled.div`
 	margin: 0 auto;
   width: 100%;
