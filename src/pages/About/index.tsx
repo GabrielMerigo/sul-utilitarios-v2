@@ -27,6 +27,9 @@ export function About() {
             Trabalhando desta forma obteve muito sucesso no ramo de venda de veículos fidelizando a clientela com um
             trabalho serio e eficiente. Mais tarde mudou a razão social para Sul Utilitários, se especializando na venda
             de caminhões semi novos, conquistando cada vez mais este mercado satisfazendo os clientes que são a base do
+            nosso negócio. Trabalhando desta forma obteve muito sucesso no ramo de venda de veículos fidelizando a clientela com um
+            trabalho serio e eficiente. Mais tarde mudou a razão social para Sul Utilitários, se especializando na venda
+            de caminhões semi novos, conquistando cada vez mais este mercado satisfazendo os clientes que são a base do
             nosso negócio.
           </p>
         </div>

@@ -24,6 +24,16 @@ export const AboutContainer = styled.section`
   }
 
   .aboutOwner{
+    margin: 1rem auto;
+    max-width: 950px;
+    display: flex;
+    justify-content: row;
 
+    .imgOwner{
+      width:150rem;
+      border: 1px solid black;
+      height: 22rem;
+      margin-right: 1rem;
+    }
   }
 `;
