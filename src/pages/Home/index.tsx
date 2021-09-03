@@ -16,8 +16,9 @@ import ArrowRight from '../../assets/arrow-right.png';
 import ArrowLeft from '../../assets/arrow-left.png';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
+import { LineTitle } from "../../components/LineTitle";
 
-interface VehiclesTypes {
+export interface VehiclesTypes {
   img: string;
   title: string;
   subtitle: string;
@@ -45,10 +46,7 @@ export function Home() {
       <Header />
       <Img src={Banner} alt="Banner" />
       <HighlightedVehicles>
-        <div className="line-title">
-          <div className="ln1"></div>
-          <h2>Veículos a Venda</h2>
-        </div>
+        <LineTitle title="Adicionados Recentemente" />
 
         <CarList>
           {!loading && (
