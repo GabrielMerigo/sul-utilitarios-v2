@@ -34,7 +34,7 @@ export function About() {
           </p>
         </div>
       </AboutContainer>
-      <Footer position="static" direction="0" />
+      <Footer marginTop="0" position="static" direction="0" />
     </>
   )
 }

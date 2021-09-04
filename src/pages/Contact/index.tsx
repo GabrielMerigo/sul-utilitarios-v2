@@ -22,7 +22,7 @@ export function Contact() {
           <HiOutlineMail/>
         </button>
       </ContainerButton>
-      <Footer position="absolute" direction="0" ></Footer>
+      <Footer marginTop="2" position="absolute" direction="0" ></Footer>
     </>
   )
 }
