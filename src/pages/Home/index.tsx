@@ -10,6 +10,7 @@ import {
   Description,
   Local,
   Map,
+  CardBoard
 } from './styles';
 
 import ArrowRight from '../../assets/arrow-right.png';
@@ -44,6 +45,9 @@ export function Home() {
   return (
     <>
       <Header />
+      <CardBoard>
+        
+      </CardBoard>
       <Img src={Banner} alt="Banner" />
       <HighlightedVehicles>
         <LineTitle title="Adicionados Recentemente" />
@@ -96,7 +100,7 @@ export function Home() {
       <Local>
         <div className="line-title">
           <div></div>
-          <h2>Onde Estamos?</h2>
+          <h2>Onde Estamos</h2>
         </div>
 
         <Map>

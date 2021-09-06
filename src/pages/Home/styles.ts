@@ -5,7 +5,7 @@ export const Img = styled.img`
 	width: 100%;
 	height: 29rem;
 	background-repeat: no-repeat;
-	border-bottom: solid 0.35rem var(--gray-light);
+	border-bottom: solid 5px var(--gray-light);
   margin-top: 2rem;
 `;
 
@@ -217,6 +217,25 @@ export const Map = styled.section`
     margin: 1.5rem auto;
     height: 432px;
     width: 47.5rem;
+  }
+`;
+
+export const CardBoard = styled.div`
+  padding: 30px 100px;
+  position: absolute;
+  bottom: 0;
+
+  .single {
+    margin-top: 20px;
+    width: 314px;
+    font-style: italic;
+    height: 60px;
+    padding: 0px 30px;
+    font-size: 23px;
+    text-transform: uppercase;
+    background-image: url("../img/box-text.png");
+    color: white;
+    background-size: 100% 100%;
   }
 `;
 
