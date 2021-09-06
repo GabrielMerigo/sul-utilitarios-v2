@@ -10,8 +10,7 @@ import {
   CarList,
   Description,
   Local,
-  Map,
-  CardBoard
+  Map
 } from './styles';
 
 import ArrowRight from '../../assets/arrow-right.png';
@@ -19,6 +18,7 @@ import ArrowLeft from '../../assets/arrow-left.png';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { LineTitle } from "../../components/LineTitle";
+import { CardBoard } from "../../components/CardBoard";
 
 export interface VehiclesTypes {
   img: string;
@@ -27,8 +27,8 @@ export interface VehiclesTypes {
   id: number;
 }
 
-interface CardBoardProps{
-  width: string;
+interface CardBoardProps {
+  width: number;
 }
 
 export function Home() {
@@ -51,10 +51,7 @@ export function Home() {
     <>
       <Header />
       <div>
-        <CardBoard>
-          <Img src={BoxText} className="single" />
-          <Img src={BoxText} className="single" />
-        </CardBoard>
+        <CardBoard width={20}></CardBoard>
         <Img src={Banner} alt="Banner" />
       </div>
       <HighlightedVehicles>

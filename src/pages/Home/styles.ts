@@ -227,9 +227,10 @@ interface CardBoardProps {
 export const CardBoard = styled.div`
   padding: 30px 100px;
   position: absolute;
-  bottom: 15rem;
+  top: 10rem;
   display: flex;
   flex-direction: column;
+  /* background-color: red; */
 
   .single {
     margin-top: 20px;
