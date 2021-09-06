@@ -220,22 +220,26 @@ export const Map = styled.section`
   }
 `;
 
+interface CardBoardProps {
+  width: number;
+}
+
 export const CardBoard = styled.div`
   padding: 30px 100px;
   position: absolute;
-  bottom: 0;
+  bottom: 15rem;
+  display: flex;
+  flex-direction: column;
 
   .single {
     margin-top: 20px;
-    width: 314px;
+    width: 20rem;
     font-style: italic;
-    height: 60px;
+    border: 0;
+    height: 4rem;
     padding: 0px 30px;
-    font-size: 23px;
     text-transform: uppercase;
-    background-image: url("../img/box-text.png");
     color: white;
-    background-size: 100% 100%;
   }
 `;
 

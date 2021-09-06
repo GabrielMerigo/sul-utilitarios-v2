@@ -1,5 +1,6 @@
 import { Header } from "../../components/Header";
 import Banner from '../../assets/banner-black.png';
+import BoxText from '../../assets/box-text.png';
 import { IoIosCar } from 'react-icons/io';
 import { RiInformationLine } from 'react-icons/ri';
 import { Footer } from "../../components/Footer";
@@ -26,6 +27,10 @@ export interface VehiclesTypes {
   id: number;
 }
 
+interface CardBoardProps{
+  width: string;
+}
+
 export function Home() {
   const [vehicles, setVehicles] = useState<VehiclesTypes[]>([]);
   const [loading, setLoading] = useState(true);
@@ -45,10 +50,13 @@ export function Home() {
   return (
     <>
       <Header />
-      <CardBoard>
-        
-      </CardBoard>
-      <Img src={Banner} alt="Banner" />
+      <div>
+        <CardBoard>
+          <Img src={BoxText} className="single" />
+          <Img src={BoxText} className="single" />
+        </CardBoard>
+        <Img src={Banner} alt="Banner" />
+      </div>
       <HighlightedVehicles>
         <LineTitle title="Adicionados Recentemente" />
 
