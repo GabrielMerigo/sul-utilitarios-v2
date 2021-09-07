@@ -220,14 +220,10 @@ export const Map = styled.section`
   }
 `;
 
-interface CardBoardProps {
-  width: number;
-}
-
 export const CardBoard = styled.div`
   padding: 30px 100px;
   position: absolute;
-  top: 10rem;
+  top: 1rem;
   display: flex;
   flex-direction: column;
   /* background-color: red; */
@@ -242,5 +238,6 @@ export const CardBoard = styled.div`
     text-transform: uppercase;
     color: white;
   }
+  
 `;
 
