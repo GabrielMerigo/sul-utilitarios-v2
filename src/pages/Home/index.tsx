@@ -27,10 +27,6 @@ export interface VehiclesTypes {
   id: number;
 }
 
-interface CardBoardProps {
-  width: number;
-}
-
 export function Home() {
   const [vehicles, setVehicles] = useState<VehiclesTypes[]>([]);
   const [loading, setLoading] = useState(true);
@@ -51,7 +47,9 @@ export function Home() {
     <>
       <Header />
       <div>
-        <CardBoard width={20}></CardBoard>
+        <CardBoard content="Teste" top={10} width={20}></CardBoard>
+        <CardBoard content="Teste" top={16} width={20}></CardBoard>
+        <CardBoard content="Teste" top={22} width={20}></CardBoard>
         <Img src={Banner} alt="Banner" />
       </div>
       <HighlightedVehicles>

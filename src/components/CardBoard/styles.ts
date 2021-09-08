@@ -11,12 +11,14 @@ export const Img = styled.img`
 
 interface CardBoardProps {
   width: number;
+  top: number;
+  content: string;
 }
 
 export const CardBoardContainer = styled.div<CardBoardProps>`
   padding: 30px 100px;
   position: absolute;
-  top: 1rem;
+  top: ${props => props.top}rem;
   display: flex;
   flex-direction: column;
 
@@ -30,5 +32,9 @@ export const CardBoardContainer = styled.div<CardBoardProps>`
     text-transform: uppercase;
     color: white;
   }
-  
+
+  h1{
+    color: white;
+    margin: 0rem auto;
+  }
 `;
