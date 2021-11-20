@@ -1,6 +1,5 @@
 import { Header } from "../../components/Header";
 import Banner from '../../assets/banner-black.png';
-import BoxText from '../../assets/box-text.png';
 import { IoIosCar } from 'react-icons/io';
 import { RiInformationLine } from 'react-icons/ri';
 import { Footer } from "../../components/Footer";
@@ -18,7 +17,8 @@ import ArrowLeft from '../../assets/arrow-left.png';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { LineTitle } from "../../components/LineTitle";
-import { CardBoard } from "../../components/CardBoard";
+import { useDispatch } from "react-redux";
+// import { CardBoard } from "../../components/CardBoard";
 
 export interface VehiclesTypes {
   img: string;
@@ -30,6 +30,7 @@ export interface VehiclesTypes {
 export function Home() {
   const [vehicles, setVehicles] = useState<VehiclesTypes[]>([]);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     api.get('/vehicles')
@@ -46,10 +47,17 @@ export function Home() {
   return (
     <>
       <Header />
+      <button onClick={() => dispatch({
+        type: 'TAL_AÇÃO',
+        vehicles: [
+          {id: '1', modelo: 'gol'},
+          {id: '2', modelo: 'civic'}
+        ]
+      })}>Testando Redux</button>
       <div>
-        <CardBoard content="Teste" top={10} width={20}></CardBoard>
+        {/* <CardBoard content="Teste" top={10} width={20}></CardBoard>
         <CardBoard content="Teste" top={16} width={20}></CardBoard>
-        <CardBoard content="Teste" top={22} width={20}></CardBoard>
+        <CardBoard content="Teste" top={22} width={20}></CardBoard> */}
         <Img src={Banner} alt="Banner" />
       </div>
       <HighlightedVehicles>
