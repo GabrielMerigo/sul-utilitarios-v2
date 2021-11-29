@@ -4,12 +4,12 @@ import { GlobalStyle } from "./styles/global";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { About } from "./pages/About";
 import { Storage } from "./pages/Storage";
-import { Provider } from 'react-redux';
-import store from './store/store';
+import { theme } from "./styles/theme";
+import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Provider store={store}>
+    <ChakraProvider resetCSS theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
         <Switch>
@@ -19,7 +19,7 @@ function App() {
           <Route path="/storage" exact component={Storage} />
         </Switch>
       </BrowserRouter>
-    </Provider>
+    </ChakraProvider>
   );
 }
 

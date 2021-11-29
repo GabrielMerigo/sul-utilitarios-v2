@@ -9,34 +9,6 @@ export const Img = styled.img`
   margin-top: 2rem;
 `;
 
-export const HighlightedVehicles = styled.div`
-  .line-title{
-    max-width: 900px;
-    margin: 0.4rem auto;
-    position: relative;
-    text-align: center;
-
-    div{
-      margin-top: 1.4rem;
-      position: absolute;
-      border: 1px solid black;
-      background-color: black;
-      width: 100%;
-    }
-
-    h2 {
-      font-size: 2rem;
-      background: white;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      padding: 0 1rem;
-      text-transform: uppercase;
-      font-style: italic;
-    }
-  }
-`;
-
 export const CarList = styled.div`
   max-width: 900px;
   margin:0 auto;
@@ -89,6 +61,7 @@ export const Description = styled.div`
   display: flex;
   width: 100%;
   margin-top: 2rem;
+  
 
   div:nth-child(1){
     width: 50%;
@@ -159,9 +132,13 @@ export const Description = styled.div`
       justify-content:space-between;
       margin-top:1rem;
       
+      span{
+        display: flex;
+      }
+      
       img{
         & + img{
-          margin-left: 1rem;
+          margin-left: .5rem;
         }
         transition: all 200ms;
       }

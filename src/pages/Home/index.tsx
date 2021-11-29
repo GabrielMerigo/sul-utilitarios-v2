@@ -1,11 +1,9 @@
 import { Header } from "../../components/Header";
 import Banner from '../../assets/banner-black.png';
-import { IoIosCar } from 'react-icons/io';
-import { RiInformationLine } from 'react-icons/ri';
 import { Footer } from "../../components/Footer";
+import { Grid } from '@chakra-ui/react';
 import {
   Img,
-  HighlightedVehicles,
   CarList,
   Description,
   Local,
@@ -17,70 +15,69 @@ import ArrowLeft from '../../assets/arrow-left.png';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { LineTitle } from "../../components/LineTitle";
-import { useDispatch } from "react-redux";
-// import { CardBoard } from "../../components/CardBoard";
+import { BoxItem } from "../../components/BoxItem";
+import { ImSpinner2 } from "react-icons/im";
+import { Spinner } from "../Storage/styles";
 
 export interface VehiclesTypes {
   img: string;
   title: string;
   subtitle: string;
+  formattedPrice: number;
   id: number;
 }
 
 export function Home() {
   const [vehicles, setVehicles] = useState<VehiclesTypes[]>([]);
-  const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
+  const [firstSixVehicles, setFirstSixVehicles] = useState<VehiclesTypes[]>([])
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     api.get('/vehicles')
       .then(async response => {
         const data = response.data.vehicles;
-        setVehicles(data)
-        setLoading(false)
+        setVehicles(data);
+        setFirstSixVehicles(vehicles.slice(0, 6))
       })
       .catch(() => {
-        setLoading(false)
+        console.log('erro ao carregamento de dados.');
       })
-  }, [])
+      .finally(() => {
+        setLoading(false);
+      })
+  }, [vehicles])
 
   return (
     <>
       <Header />
-      <button onClick={() => dispatch({
-        type: 'TAL_AÇÃO',
-        vehicles: [
-          {id: '1', modelo: 'gol'},
-          {id: '2', modelo: 'civic'}
-        ]
-      })}>Testando Redux</button>
       <div>
-        {/* <CardBoard content="Teste" top={10} width={20}></CardBoard>
-        <CardBoard content="Teste" top={16} width={20}></CardBoard>
-        <CardBoard content="Teste" top={22} width={20}></CardBoard> */}
         <Img src={Banner} alt="Banner" />
       </div>
-      <HighlightedVehicles>
-        <LineTitle title="Adicionados Recentemente" />
+      <LineTitle title="Adicionados Recentemente" />
 
-        <CarList>
-          {!loading && (
-            <ul> {
-              vehicles.map(vehicle => {
-                return (
-                  <li key={vehicle.id}>
-                    <img src={vehicle.img} alt={vehicle.title} />
-                    <div>
-                      <span><h4><IoIosCar />{vehicle.title}</h4></span>
-                      <span><p><RiInformationLine />{vehicle.subtitle}</p></span>
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          )}
-        </CarList>
-      </HighlightedVehicles>
+      <CarList>,
+        {loading ? (
+          <Spinner>
+            <ImSpinner2 className="loader" />
+          </Spinner>
+        ) : (
+          <>
+            <Grid templateColumns="repeat(3, 1fr)" gap={3}>
+              {firstSixVehicles.map(({ img, title, subtitle, formattedPrice }) => (
+                <BoxItem
+                  img={img}
+                  title={title}
+                  description={subtitle}
+                  formattedPrice={formattedPrice}
+                  isNew={true}
+                />
+              ))}
+            </Grid>
+          </>
+        )}
+      </CarList>
+
       <Description>
         <div>
           <div>
