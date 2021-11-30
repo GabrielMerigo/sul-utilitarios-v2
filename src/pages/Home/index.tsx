@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header";
-import Banner from '../../assets/banner-black.png';
+// import Banner from '../../assets/banner-black.png';
 import { Footer } from "../../components/Footer";
 import { Grid } from '@chakra-ui/react';
 import {
@@ -10,14 +10,15 @@ import {
   Map
 } from './styles';
 
-import ArrowRight from '../../assets/arrow-right.png';
-import ArrowLeft from '../../assets/arrow-left.png';
+// import ArrowRight from '../../assets/arrow-right.png';
+// import ArrowLeft from '../../assets/arrow-left.png';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { LineTitle } from "../../components/LineTitle";
 import { BoxItem } from "../../components/BoxItem";
 import { ImSpinner2 } from "react-icons/im";
 import { Spinner } from "../Storage/styles";
+import firebase from "../../services/firebase";
 
 export interface VehiclesTypes {
   img: string;
@@ -29,8 +30,8 @@ export interface VehiclesTypes {
 
 export function Home() {
   const [vehicles, setVehicles] = useState<VehiclesTypes[]>([]);
-  const [firstSixVehicles, setFirstSixVehicles] = useState<VehiclesTypes[]>([])
   const [loading, setLoading] = useState(false);
+  console.log(firebase);
 
   useEffect(() => {
     setLoading(true)
@@ -38,7 +39,6 @@ export function Home() {
       .then(async response => {
         const data = response.data.vehicles;
         setVehicles(data);
-        setFirstSixVehicles(vehicles.slice(0, 6))
       })
       .catch(() => {
         console.log('erro ao carregamento de dados.');
@@ -46,31 +46,33 @@ export function Home() {
       .finally(() => {
         setLoading(false);
       })
-  }, [vehicles])
+  }, []);
+
 
   return (
     <>
       <Header />
       <div>
-        <Img src={Banner} alt="Banner" />
+        {/* <Img src={Banner} alt="Banner" /> */}
       </div>
       <LineTitle title="Adicionados Recentemente" />
 
-      <CarList>,
-        {loading ? (
+      <CarList>
+        {loading && vehicles.length > 0 ? (
           <Spinner>
             <ImSpinner2 className="loader" />
           </Spinner>
         ) : (
           <>
             <Grid templateColumns="repeat(3, 1fr)" gap={3}>
-              {firstSixVehicles.map(({ img, title, subtitle, formattedPrice }) => (
+              {vehicles.slice(0, 6).map(({ img, title, subtitle, formattedPrice }, index) => (
                 <BoxItem
                   img={img}
                   title={title}
                   description={subtitle}
                   formattedPrice={formattedPrice}
                   isNew={true}
+                  key={index}
                 />
               ))}
             </Grid>
@@ -98,8 +100,8 @@ export function Home() {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptates necessitatibus culpa, ratione deleniti magnam ullam vero consectetur voluptatibus incidunt est quos quidem, aperiam officiis repellendus, labore veniam possimus dolor!</p>
           <div>
             <span>
-              <img src={ArrowLeft} alt="ArrowRight" />
-              <img src={ArrowRight} alt="ArrowRight" />
+              {/* <img src={ArrowLeft} alt="ArrowRight" />
+              <img src={ArrowRight} alt="ArrowRight" /> */}
             </span>
             <h3>- João Tavares</h3>
           </div>
